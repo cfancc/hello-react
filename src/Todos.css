@@ -1,0 +1,12 @@
+ul,li {
+    list-style: none;
+}
+.todos-header {
+    margin: 20px;
+}
+
+.todo-items,
+.done-items {
+    height: 200px;
+    padding: 20px;
+}    
