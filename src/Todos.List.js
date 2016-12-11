@@ -34,7 +34,7 @@ class TodoItem extends Component {
         );
     }
     deleteHandler(e) {
-        this.props.delItemById(parseInt(e.target.parentNode.parentNode.dataset.id, 10));
+        this.props.delItemById(parseInt(e.target.parentNode.dataset.id, 10));
     }
     render() {
         const { item } = this.props;
@@ -47,11 +47,9 @@ class TodoItem extends Component {
                     value={item.content} 
                     onChange={this.handlerChange.bind(this)} 
                     onDoubleClick={this.itemDoubleClickHandler.bind(this)} 
-                    onBlur={this.itemBlurHandler.bind(this)} 
+                    onBlur={this.itemBlurHandler.bind(this)}
                     readOnly={this.state.readOnly}/>
-                {
-                    this.state.readOnly?null: <span><button onClick={this.itemBlurHandler.bind(this)}>完成</button><button onClick={this.deleteHandler.bind(this)}>删除</button></span>
-                }
+                <button onClick={this.deleteHandler.bind(this)}>删除</button>
             </li>
         )
     }
